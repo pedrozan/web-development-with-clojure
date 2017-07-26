@@ -1,0 +1,11 @@
+(use 'liberator-service.repl)
+(start-server)
+exit
+(use 'liberator-service.repl)
+exit
+(use 'liberator-service.repl)
+(start-server)
+exit
+(use 'liberator-service.repl)
+(start-server)
+exit
