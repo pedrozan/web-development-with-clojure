@@ -1,0 +1,43 @@
+(use 'reporting-example.repl)
+(start-server)
+(use 'reporting-example.models.db)
+(read-employees)
+(use 'reporting-example.reports)
+exit
+(use 'reporting-example.repl)
+(use 'reporting-example.reports)
+exit
+(use 'reporting-example.repl)
+(use 'reporting-example.reports)
+(employee-template (take2 (db/read-employees)))
+(use 'reporting-example.reports)
+(employee-template (take2 (db/read-employees)))
+exit
+(use 'reporting-example.repl)
+(use 'reporting-example.reports)
+exit
+(use 'reporting-example.repl)
+(use 'reporting-example.reports)
+(employee-template (take2 (db/read-employees)))
+(employee-template (take 2 (db/read-employees)))
+(use 'reporting-example.reports)
+(pdf
+[{:header "Employee List"}
+(into [:table
+{:border false
+:cell-border false
+:header [{:color [0 150 150]} "Name" "Occupation" "Place" "Country"]}]
+(employee-template (db/read-employees)))]
+"report.pdf")
+exit
+(use 'reporting-example.repl)
+(use 'reporting-example.reports)
+exit
+(use 'reporting-example.repl)
+(use 'reporting-example.reports)
+exit
+(use 'reporting-example.repl)
+(use 'reporting-example.reports)
+(start-server
+)
+exit
